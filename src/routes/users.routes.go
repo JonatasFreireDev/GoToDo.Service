@@ -4,8 +4,8 @@ import (
 	"github.com/JonatasFreireDev/GoToDo.Service/src/handlers"
 )
 
-func todoRoutes() {
-	api := App.Group("/todo")
+func userRoutes() {
+	api := App.Group("/user")
 
-	api.Get("/", handlers.GetTodo)
+	api.Get("/", handlers.GetUser)
 }
