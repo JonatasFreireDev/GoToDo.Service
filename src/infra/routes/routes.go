@@ -13,4 +13,6 @@ func init() {
 func Register() {
 	todoRoutes()
 	userRoutes()
+
+	App.Listen(":3000")
 }
