@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/JonatasFreireDev/GoToDo.Service/src/modules/todo/model"
+	usecases "github.com/JonatasFreireDev/GoToDo.Service/src/modules/todo/use-cases"
 	"github.com/JonatasFreireDev/GoToDo.Service/src/modules/todo/utils"
 	"github.com/gofiber/fiber/v2"
 )
@@ -17,7 +18,7 @@ func PostTodo(c *fiber.Ctx) error {
 		return err
 	}
 
-	model.TodoList = append(model.TodoList, todo)
+	usecases.AddNewTodo(todo)
 
 	return c.SendStatus(fiber.StatusCreated)
 }
