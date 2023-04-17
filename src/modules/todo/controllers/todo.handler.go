@@ -1,13 +1,13 @@
 package controllers
 
 import (
-	"github.com/JonatasFreireDev/GoToDo.Service/src/app/entities"
-	"github.com/JonatasFreireDev/GoToDo.Service/src/utils"
+	"github.com/JonatasFreireDev/GoToDo.Service/src/modules/todo/model"
+	"github.com/JonatasFreireDev/GoToDo.Service/src/modules/todo/utils"
 	"github.com/gofiber/fiber/v2"
 )
 
 func GetTodo(c *fiber.Ctx) error {
-	return c.JSON(entities.TodoList)
+	return c.JSON(model.TodoList)
 }
 
 func PostTodo(c *fiber.Ctx) error {
@@ -17,7 +17,7 @@ func PostTodo(c *fiber.Ctx) error {
 		return err
 	}
 
-	entities.TodoList = append(entities.TodoList, todo)
+	model.TodoList = append(model.TodoList, todo)
 
 	return c.SendStatus(fiber.StatusCreated)
 }

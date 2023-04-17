@@ -1,9 +1,9 @@
-package entities
+package model
 
 import "time"
 
 type Todo struct {
-	Id          string    `json:"id"`
+	Id          string    `json:"id" validate:"required"`
 	Status      Status    `json:"status"`
 	Description string    `json:"description"`
 	CreatedAt   time.Time `json:"createdAt"`

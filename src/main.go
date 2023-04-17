@@ -1,7 +1,7 @@
 package main
 
-import "github.com/JonatasFreireDev/GoToDo.Service/src/infra/routes"
+import "github.com/JonatasFreireDev/GoToDo.Service/src/shared/infra"
 
 func main() {
-	routes.Register()
+	infra.App.Listen(":3000")
 }

@@ -3,14 +3,14 @@ package utils
 import (
 	"time"
 
-	"github.com/JonatasFreireDev/GoToDo.Service/src/app/entities"
+	"github.com/JonatasFreireDev/GoToDo.Service/src/modules/todo/model"
 	"github.com/gofiber/fiber/v2/utils"
 )
 
-func TodoFactory() entities.Todo {
-	return entities.Todo{
+func TodoFactory() model.Todo {
+	return model.Todo{
 		Id:          utils.UUIDv4(),
-		Status:      entities.Status{Value: "pending"},
+		Status:      model.Status{Value: "pending", UpdatedAt: time.Now()},
 		Description: "description",
 		CreatedAt:   time.Now(),
 		UpdatedAt:   time.Now(),
