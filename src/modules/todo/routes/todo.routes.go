@@ -10,4 +10,5 @@ func RegisterRoutes(r *fiber.App) {
 
 	api.Get("/", controllers.GetTodo)
 	api.Post("/", controllers.PostTodo)
+	api.Delete("/:id", controllers.DeleteTodo)
 }

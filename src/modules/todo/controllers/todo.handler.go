@@ -22,3 +22,11 @@ func PostTodo(c *fiber.Ctx) error {
 
 	return c.SendStatus(fiber.StatusCreated)
 }
+
+func DeleteTodo(c *fiber.Ctx) error {
+	id := c.Params("id")
+
+	usecases.DeleteTodo(id)
+
+	return c.SendStatus(fiber.StatusOK)
+}
