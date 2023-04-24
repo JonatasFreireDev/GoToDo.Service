@@ -26,7 +26,11 @@ func PostTodo(c *fiber.Ctx) error {
 func DeleteTodo(c *fiber.Ctx) error {
 	id := c.Params("id")
 
-	usecases.DeleteTodo(id)
+	err := usecases.DeleteTodo(id)
+
+	if err != nil {
+		return c.SendStatus(fiber.StatusNotFound)
+	}
 
 	return c.SendStatus(fiber.StatusOK)
 }

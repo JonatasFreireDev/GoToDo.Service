@@ -12,7 +12,7 @@ type routerToRegister func(*fiber.App)
 
 var App *fiber.App
 
-func init() {
+func InitRoutes() {
 	App = fiber.New()
 
 	register(todo.RegisterRoutes)
